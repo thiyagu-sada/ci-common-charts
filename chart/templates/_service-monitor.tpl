@@ -1,3 +1,6 @@
+{{- define "common.servicemonitor" }}
+---
+{{- if eq .Values.servicemonitor true }}
 ---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
@@ -13,3 +16,5 @@ spec:
   selector:
     matchLabels:
     {{- include "app.labels" . | nindent 6 }}
+{{ end }}
+{{ end }}

@@ -4,7 +4,7 @@ within the common library.
 */}}
 {{- define "common.deployment" }}
 ---
-{{- if (ne .Values.deploymentConfig true) }}
+{{- if eq .Values.deployment true }}
 ---
 apiVersion: apps/v1
 kind: Deployment

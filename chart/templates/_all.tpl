@@ -3,7 +3,7 @@ Main entrypoint for the common library chart. It will render all underlying temp
 */}}
 {{- define "common.all" -}}
   {{- /* Merge the local chart values and the common chart defaults */ -}}
-  {{- include "common.values.setup" . }}
+  {{- /* include "common.values.setup" . */}}
 
   {{- if .Values.controller.enabled }}
     {{- if eq .Values.controller.type "deployment" }}

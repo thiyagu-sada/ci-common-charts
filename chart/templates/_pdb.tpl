@@ -1,3 +1,7 @@
+{{- define "common.pdb" }}
+---
+{{- if eq .Values.pdb true }}
+---
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
@@ -9,3 +13,5 @@ spec:
   selector:
     matchLabels:
       deploymentconfig: {{ include "app.fullname" . }}
+{{- end }}
+{{- end }}

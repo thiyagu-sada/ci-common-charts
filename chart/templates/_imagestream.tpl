@@ -1,4 +1,6 @@
-{{- if (eq .Values.is.enabled true) }}
+{{- define "common.is" }}
+---
+{{- if eq .Values.is true }}
 ---
 apiVersion: image.openshift.io/v1
 kind: ImageStream
@@ -19,5 +21,6 @@ spec:
         name: {{ .Values.image_repository }}/{{ .Values.image_namespace }}/{{ .Values.image_name }}:{{ .Values.image_version }}
       importPolicy: {}
       name: {{ .Values.image_version }}
-{{- end }}
-{{- end }}
+{{ end }}
+{{ end }}
+{{ end }}

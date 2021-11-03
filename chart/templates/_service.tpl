@@ -1,4 +1,6 @@
-{{- define "common.route" }}
+{{- define "common.service" }}
+---
+{{- if eq .Values.service true }}
 ---
 apiVersion: v1
 kind: Service
@@ -22,4 +24,5 @@ spec:
   type: ClusterIP
 status:
   loadBalancer: {}
+{{ end }}
 {{ end }}

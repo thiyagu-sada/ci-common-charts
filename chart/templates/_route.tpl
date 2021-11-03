@@ -1,5 +1,6 @@
-{{- define "common.deployment" }}
-{{- if .Values.route }}
+{{- define "common.route" }}
+---
+{{- if eq .Values.route true }}
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
