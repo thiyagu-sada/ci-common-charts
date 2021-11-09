@@ -4,7 +4,7 @@ within the common library.
 */}}
 {{- define "common.deploymentConfig" }}
 ---
-{{- if .Values.deploymentConfig }}
+{{- if eq .Values.deploymentConfig true }}
 ---
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
